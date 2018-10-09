@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  .jumbotron
+    .container
+      h1 ข่าว
+  .container
+    .row
+      .col-12
+        h1=headline
+        hr
+    .row
+      .col-sm-9
+        p!=contents
+      .col-sm-3
+        .card
+          .card-body
+            h5 เหรียญรางวัลที่ได้
+            span.mdi.mdi-medal.gold
+            span=gold_count+" เหรียญทอง"
+            br
+            span.mdi.mdi-medal.silver
+            span=silver_count+" เหรียญเงิน"
+            br
+            span.mdi.mdi-medal.bronze
+            span=bronze_count+" เหรียญทองแดง"
+    .row
+      .col-12
+        hr
+        h2 ความคิดเห็น
+        if comments.length == 0
+          .alert.alert-warning ขณะนี้ยังไม่มีความคิดเห็น
+        each comment in comments
+          .card
+            .card-body
+              p.card-text=comment.comment
+              p.card-text.small="จาก: " + comment.from
+        hr
+        h3 แสดงความคิดเห็น
+        form(method="post" action=id+"/comment")
+          .form-row
+            .form-group.col-md-12
+                label(for="from") ชื่อผู้ส่ง 
+                input(name="from" class="form-control")
+          .form-row
+            .form-group.col-md-12
+                label(for="comment") เนื้อข่าว
+                textarea(name="comment" class="form-control")
+          button(type="submit" class="btn btn-primary") โพสต์ข่าว

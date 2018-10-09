@@ -1,0 +1,96 @@
+body {
+  padding-top: 56px;
+  padding-bottom: 70px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Athiti', sans-serif;
+  font-weight: 600;
+}
+
+/*Jumbotron*/
+
+.jumbotron {
+  background: url('/images/thai-athlete.jpg');
+  background-size: cover;
+}
+
+.jumbotron p, .jumbotron h1 {
+  display: table;
+  padding: 5px 12px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  font-family: 'Athiti', sans-serif;
+}
+
+/*Medal counting page*/
+
+#medal-counter h1 {
+  font-size: 60px;
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+#medal-counter h1:after {
+  content: " เหรียญ";
+  font-size: 20px;
+}
+
+.circle-icon {
+  width: 150px;
+  height: 150px;
+  border: 3px solid #000000;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto 10px;
+  font-size: 100px;
+}
+
+.circle-icon:before {
+  padding-top: 25px;
+  font-size: 100px;
+  line-height: 100px;
+  padding: 0px;
+}
+
+@media(max-width: 768px) {
+  #medal-counter h1 {
+    font-size: 40px;
+  }
+  #medal-counter h1:before {
+    font-size: 10px;
+  }
+  .circle-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 65px;
+  }
+}
+
+.gold {
+  color: #F9A825;
+}
+
+.silver {
+  color: #78909C;
+}
+
+.bronze {
+  color: #ad3030;
+}
+
+.circle-icon.gold {
+  border-color: #F9A825;
+}
+
+.circle-icon.silver {
+  border-color: #78909C;
+}
+
+.circle-icon.bronze {
+  border-color: #ad3030;
+}
+
+.card {
+  margin-bottom: 20px;
+}

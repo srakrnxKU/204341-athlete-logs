@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  .jumbotron
+    .container
+      h1 ร่วมส่งแรงใจ เชียร์นักกีฬาไทย
+      p ในการแข่งขันเอเชี่ยนเกมส์ 2018
+  .container
+    .row
+      .col-12
+        h1 สถิติทัพนักกีฬาไทย
+    .row#medal-counter(style="text-align: center;")
+      .col-4
+        .circle-icon.mdi.mdi-medal.gold
+        h3 เหรียญทอง
+        h1=coins.gold
+      .col-4
+        .circle-icon.mdi.mdi-medal.silver
+        h3 เหรียญเงิน
+        h1=coins.silver
+      .col-4
+        .circle-icon.mdi.mdi-medal.bronze
+        h3 เหรียญทองแดง
+        h1=coins.bronze
+      .col-md-12
+        <hr/>
+    .row
+      .col-md-12
+        h1 
+          span ข่าว
+          a.btn.btn-light.float-right(href="/add/news") เขียนข่าวใหม่
+        table.table
+          thead
+            tr
+              th(scope="col") หัวข้อข่าว
+              th(scope="col") เหรียญทอง
+              th(scope="col") เหรียญเงิน
+              th(scope="col") เหรียญทองแดง
+          tbody
+            each n in news
+              tr
+                td(scope="row")
+                  a(href="news/"+n.id)=n.headline
+                td(scope="row")=n.gold_count
+                td(scope="row")=n.bronze_count
+                td(scope="row")=n.silver_count

@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  .jumbotron
+    .container
+      h1 เขียนข่าวใหม่
+  .container
+    .row
+      .col-12
+        form(method="post")
+          .form-row
+            .form-group.col-md-12
+                label(for="headline") พาดหัวข่าว
+                input(name="headline" class="form-control")
+          .form-row
+            .form-group.col-md-12
+                label(for="contents") เนื้อข่าว
+                textarea(name="contents" class="form-control")
+          .form-row
+            .form-group.col-md-4
+                label(for="gold_count") เหรียญทอง 
+                input(name="gold_count" class="form-control")
+            .form-group.col-md-4
+                label(for="silver_count") เหรียญเงิน
+                input(name="silver_count" class="form-control")
+            .form-group.col-md-4
+                label(for="bronze_count") เหรียญทองแดง
+                input(name="bronze_count" class="form-control")
+          button(type="submit" class="btn btn-primary") โพสต์ข่าว
